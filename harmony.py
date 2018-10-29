@@ -494,7 +494,7 @@ class Harmonizer():
             idx = [self.__notes.index(c) for c in chrd]
             idx = [c if c >= 0 else (12 + c) for c in [(c - idx[0]) for c in idx]]
 
-            h.append(self.__check_chord(root, idx))
+            h.append({ self.__check_chord(root, idx): chrd })
 
         return h
 
@@ -514,8 +514,3 @@ if __name__ == "__main__":
     hh = h.harmonize()
     print(hh)
 
-    hhq = h.quartal()
-    print(hhq)
-
-    hhqi = h.quintal()
-    print(hhqi)
